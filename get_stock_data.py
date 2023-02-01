@@ -19,7 +19,7 @@ class Downloader(object):
         self._bs = bs
         bs.login()
         self.date_start = date_start
-        # self.date_end = datetime.datetime.now().strftime("%Y-%m-%d")
+        self.date_end = datetime.datetime.now().strftime("%Y-%m-%d")
         self.date_end = date_end
         self.output_dir = output_dir
         self.fields = "date,code,open,high,low,close,volume,amount," \
