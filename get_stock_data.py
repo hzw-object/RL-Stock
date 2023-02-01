@@ -20,7 +20,7 @@ class Downloader(object):
         bs.login()
         self.date_start = date_start
         self.date_end = datetime.datetime.now().strftime("%Y-%m-%d")
-        self.date_end = date_end
+        # self.date_end = date_end
         self.output_dir = output_dir
         self.fields = "date,code,open,high,low,close,volume,amount," \
                       "adjustflag,turn,tradestatus,pctChg,peTTM," \
@@ -39,7 +39,7 @@ class Downloader(object):
     def run(self):
         stock_df = self.get_codes_by_date(self.date_end)
         for index, row in stock_df.iterrows():
-            print(f'processing {row["code"]} {row["code_name"]}')
+            # print(f'processing {row["code"]} {row["code_name"]}')
             df_code = bs.query_history_k_data_plus(row["code"], self.fields,
                                                    start_date=self.date_start,
                                                    end_date=self.date_end).get_data()
